@@ -104,11 +104,17 @@
   const reveal = (targets, options = {}) => {
     const elements = typeof targets === 'string' ? $(targets) : targets;
 
+    if (!elements.length) return;
+
+    // Stan wyjściowy ustawiamy od razu przy starcie, a nie dopiero w momencie triggera:
+    // inaczej element jest widoczny, potem znika i dopiero wtedy animuje się do widocznego.
+    gsap.set(elements, { opacity: 0, x: options.x || 0, y: options.y ?? 28 });
+
     elements.forEach((element, index) => {
-      const tween = gsap.from(element, {
-        opacity: 0,
-        x: options.x || 0,
-        y: options.y ?? 28,
+      const tween = gsap.to(element, {
+        opacity: 1,
+        x: 0,
+        y: 0,
         duration: options.duration || 0.9,
         ease: 'power3.out',
         delay: options.stagger ? Math.min(index * options.stagger, 0.5) : 0,
@@ -145,21 +151,24 @@
     stagger: 0.08,
   });
   // Stopka celowo bez animacji: leży na samym dole dokumentu, więc jej górna krawędź
-  // nigdy nie przekroczy linii startu 'top 85%' i gsap.from() zostawiłby ją trwale ukrytą.
-  // Gdybyś chciał ją jednak animować, użyj start: 'top bottom' – wtedy odpala się zawsze.
+  // nigdy nie przekroczy linii startu 'top 85%' i zostałaby trwale ukryta (reveal()
+  // ustawia stan wyjściowy z góry). Gdybyś chciał ją animować, daj start: 'top bottom'.
 
   /* 5. Kafle galerii – pojawiają się partiami wraz ze scrollem ------------ */
   const tiles = $('.gallery-grid .media-tile');
 
   if (tiles.length) {
+    // Chowamy kafle od razu po wczytaniu strony – gdyby robić to dopiero przy triggerze,
+    // byłyby widoczne, zniknęłyby i dopiero wtedy wjechałyby z animacją.
+    gsap.set(tiles, { opacity: 0, y: 40 });
+
     ScrollTrigger.batch(tiles, {
       start: 'top 92%',
       once: true,
       onEnter: (batch) =>
-        gsap.from(batch, {
-          opacity: 0,
-          y: 40,
-          scale: 0.97,
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
           duration: 0.85,
           ease: 'power3.out',
           stagger: 0.08,
@@ -188,8 +197,8 @@
 
   /* 7. Zabezpieczenie: elementy, które nigdy nie dotrą do linii startu --- */
   // Gdyby górna krawędź elementu leżała tak nisko, że nawet przy maksymalnym przewinięciu
-  // nie przekroczy linii 'top 85%', jego animacja nigdy się nie odpali, a gsap.from()
-  // zostawi go trwale ukrytym. Takie elementy pokazujemy od razu w finalnym stanie.
+  // nie przekroczy linii 'top 85%', animacja nigdy się nie odpali, a element (ukryty od
+  // razu przez reveal()) zostałby niewidoczny. Takie elementy pokazujemy od razu.
   const showUnreachable = () => {
     const startLine = window.innerHeight * 0.85;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
