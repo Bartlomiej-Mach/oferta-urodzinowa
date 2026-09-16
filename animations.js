@@ -79,13 +79,13 @@
 
     gsap.fromTo(
       '.hero-media',
-      { scale: 1, yPercent: -6 },
+      { scale: 1.15, yPercent: -6 },
       { scale: 1.15, yPercent: 30, ease: 'none', scrollTrigger: heroScrollConfig() }
     );
 
     gsap.fromTo(
       '.hero-video',
-      { scale: 1, yPercent: -6 },
+      { scale: 1.15, yPercent: -6 },
       { scale: 1.15, yPercent: 30, ease: 'none', scrollTrigger: heroScrollConfig() }
     );
 
