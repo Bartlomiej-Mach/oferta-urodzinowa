@@ -15,6 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -26,14 +32,24 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-hidden="true"
+        >
           <source src="gallery/hero.webm" type="video/webm" />
         </video>
         <div class="shell hero-content reveal">
           <p class="eyebrow">Fotografia & film na 18-stkę</p>
-          <h1 id="hero-title">Osiemnaście lat czekania na <br><em>tę jedną noc.</em></h1>
+          <h1 id="hero-title">Osiemnaście lat czekania na <br /><em>tę jedną noc.</em></h1>
           <p class="hero-lead">Fotografia i film, które oddają to, co poczujecie tylko raz.</p>
-          <a class="button" href="#galeria">Zobacz, jak to wygląda</a>
+          <a class="button" href="#galeria"
+            >Zobacz, jak to wygląda <i class="fa-solid fa-circle-arrow-down"></i
+          ></a>
         </div>
         <p class="hero-note">Maszon Photo · reportaż z bliska</p>
       </section>
@@ -41,11 +57,7 @@
       <section class="section" id="o-mnie">
         <div class="shell about-grid">
           <figure class="about-photo">
-            <img
-              src="gallery/ja.jpg"
-              alt="Maszon podczas pracy z aparatem"
-              loading="lazy"
-            />
+            <img src="gallery/ja.jpg" alt="Maszon podczas pracy z aparatem" loading="lazy" />
           </figure>
           <div class="about-copy">
             <p class="eyebrow">Po drugiej stronie aparatu</p>
@@ -87,8 +99,10 @@
             <figure class="media-tile media-horizontal">
               <img src="gallery/photo-24.jpg" alt="Detal dekoracji imprezy" loading="lazy" />
             </figure>
-            <figure class="media-tile video-tile media-vertical" data-video="gallery/video-01-web.webm">
-              <figure class="media-tile video-tile media-vertical" data-video="gallery/video-01-web.webm">
+            <figure
+              class="media-tile video-tile media-vertical"
+              data-video="gallery/video-01-web.webm"
+            >
               <img
                 src="gallery/photo-05.jpg"
                 alt="Krótkie, dynamiczne ujęcia z imprezy urodzinowej"
@@ -99,7 +113,8 @@
                 type="button"
                 aria-label="Zobacz rolkę z imprezy urodzinowej"
               >
-                <span class="play-icon">▶</span><span>Zobacz rolkę</span>
+                <i class="play-icon fa-solid fa-play" aria-hidden="true"></i
+                ><span>Zobacz rolkę</span>
               </button>
               <figcaption class="tile-label">Rolka z imprezy urodzinowej</figcaption>
             </figure>
@@ -115,8 +130,10 @@
             <figure class="media-tile media-horizontal">
               <img src="gallery/photo-16.jpg" alt="Dekoracje i światła imprezy" loading="lazy" />
             </figure>
-            <figure class="media-tile video-tile media-vertical" data-video="gallery/video-02-web.webm">
-              <figure class="media-tile video-tile media-vertical" data-video="gallery/video-02-web.webm">
+            <figure
+              class="media-tile video-tile media-vertical"
+              data-video="gallery/video-02-web.webm"
+            >
               <img
                 src="gallery/photo-06.jpg"
                 alt="Krótkie, dynamiczne ujęcia z imprezy urodzinowej"
@@ -127,12 +144,15 @@
                 type="button"
                 aria-label="Zobacz rolkę z imprezy urodzinowej"
               >
-                <span class="play-icon">▶</span><span>Zobacz rolkę</span>
+                <i class="play-icon fa-solid fa-play" aria-hidden="true"></i
+                ><span>Zobacz rolkę</span>
               </button>
               <figcaption class="tile-label">Rolka z imprezy urodzinowej</figcaption>
             </figure>
-            <figure class="media-tile video-tile media-vertical" data-video="gallery/video-03-web.webm">
-              <figure class="media-tile video-tile media-vertical" data-video="gallery/video-03-web.webm">
+            <figure
+              class="media-tile video-tile media-vertical"
+              data-video="gallery/video-03-web.webm"
+            >
               <img
                 src="gallery/photo-07.jpg"
                 alt="Krótkie, dynamiczne ujęcia z imprezy urodzinowej"
@@ -143,7 +163,8 @@
                 type="button"
                 aria-label="Zobacz rolkę z imprezy urodzinowej"
               >
-                <span class="play-icon">▶</span><span>Zobacz rolkę</span>
+                <i class="play-icon fa-solid fa-play" aria-hidden="true"></i
+                ><span>Zobacz rolkę</span>
               </button>
               <figcaption class="tile-label">Rolka z imprezy urodzinowej</figcaption>
             </figure>
@@ -163,25 +184,29 @@
           <div class="quote-grid">
             <blockquote>
               <p>
-                „Bartek robi najlepsze zdjęcia najlepsza opcja na 18 ,jedyny słuszny wybór jakość zdjęć i to ja je Bartek obrabia to cudo ja jestem bardzooo zadowolona ze współpracy z nim polecam każdemu kto szuka fotografa”
+                „Bartek robi najlepsze zdjęcia najlepsza opcja na 18 ,jedyny słuszny wybór jakość
+                zdjęć i to ja je Bartek obrabia to cudo ja jestem bardzooo zadowolona ze współpracy
+                z nim polecam każdemu kto szuka fotografa”
               </p>
               <footer>Nikola Nowak<br />Solenizantka, 18. urodziny</footer>
             </blockquote>
             <blockquote>
               <p>
-                „Bardzo polecam fotografa, zdjęcia z najwyższej półki. Pełen profesjonalizm, świetny kontakt a sam Maszon zawsze uśmiechnięty. Polecam wszystkim z całego serca, atmosfera fantastyczna, a każde zdjęcie jest niesamowite.”
+                „Bardzo polecam fotografa, zdjęcia z najwyższej półki. Pełen profesjonalizm, świetny
+                kontakt a sam Maszon zawsze uśmiechnięty. Polecam wszystkim z całego serca,
+                atmosfera fantastyczna, a każde zdjęcie jest niesamowite.”
               </p>
               <footer>Wojtek Latacz<br />Solenizant, 18. urodziny</footer>
             </blockquote>
             <blockquote>
               <p>
-                „Maszon Photo to po prostu mistrz!
-
-Był u mnie na osiemnastce i zrobil niesamowitą robotę! Od samego początku wprowadził mega luźny, pozytywny klimat, dzięki czemu nikt nie czuł spinki przed aparatem, a zdjęcia wyszły całkowicie naturalnie i z charakterem.
-
-Uchwycił wszystkie najważniejsze momenty, najlepsze momenty z ekipą i całą energię tej nocy. Jakość fotek, kolory i kadry czysta petarda!
-
-Jeśli szukacie kogoś, kto ogarnie imprezę na 100% i zrobi pamiątkę na całe życie, to lepiej trafić nie mogliście. Polecam z całego serca, robi robotę! Rozwalone!”
+                „Maszon Photo to po prostu mistrz! Był u mnie na osiemnastce i zrobil niesamowitą
+                robotę! Od samego początku wprowadził mega luźny, pozytywny klimat, dzięki czemu
+                nikt nie czuł spinki przed aparatem, a zdjęcia wyszły całkowicie naturalnie i z
+                charakterem. Uchwycił wszystkie najważniejsze momenty, najlepsze momenty z ekipą i
+                całą energię tej nocy. Jakość fotek, kolory i kadry czysta petarda! Jeśli szukacie
+                kogoś, kto ogarnie imprezę na 100% i zrobi pamiątkę na całe życie, to lepiej trafić
+                nie mogliście. Polecam z całego serca, robi robotę! Rozwalone!”
               </p>
               <footer>Cezary <br />18. urodziny, Zawiercie</footer>
             </blockquote>
@@ -200,12 +225,12 @@ Jeśli szukacie kogoś, kto ogarnie imprezę na 100% i zrobi pamiątkę na całe
           </div>
           <p class="package-standard">
             Każde zdjęcie, które dostajesz, przechodzi ten sam staranny retusz — usuwam
-            niedoskonałości skóry i zaczerwienienia, wygładzam skórę, poprawiam kolorystykę oczu,
-            wybielam zęby i usuwam ślady potu. To standard we wszystkich trzech pakietach — różni je
-            zakres i czas trwania relacji z Wami tego wieczoru.
+            niedoskonałości, zaczerwienienia i wygładzam skórę, poprawiam kolorystykę oczu, wybielam
+            zęby i usuwam ślady potu. To standard we wszystkich trzech pakietach — różni je zakres i
+            czas trwania relacji z Wami tego wieczoru.
           </p>
           <p class="delivery-note">
-            <span class="delivery-icon" aria-hidden="true">i</span>
+            <i class="fa-solid fa-info"></i>
             <span>Zdjęcia otrzymasz w przeciągu 5 tygodni.</span>
           </p>
           <div class="packages">

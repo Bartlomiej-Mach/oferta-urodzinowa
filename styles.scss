@@ -181,7 +181,7 @@ h2 {
   display: inline-flex;
   font-size: 0.75rem;
   font-weight: 600;
-  gap: 22px;
+  gap: 10px;
   justify-content: center;
   letter-spacing: 0.04em;
   margin-top: 32px;
@@ -198,8 +198,10 @@ h2 {
   transform: translateY(-2px);
 }
 .button::after {
-  content: '↘';
-  font-size: 1.1rem;
+  content: none;
+}
+.button > i {
+  font-size: 0.85rem;
 }
 
 .about-grid {
@@ -356,6 +358,7 @@ h2 {
   white-space: nowrap;
   z-index: 2;
   isolation: isolate;
+  overflow: visible;
 }
 .video-trigger::before {
   background: rgba(201, 161, 94, 0.42);
@@ -675,6 +678,21 @@ blockquote footer {
   font-size: clamp(1.15rem, 2vw, 1.45rem);
   margin: -18px 0 44px;
   padding: 18px 18px 18px 16px;
+
+  i {
+    border: 1px solid var(--ivory);
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    position: relative;
+
+    &::before{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 .delivery-icon {
   align-items: center;
@@ -684,7 +702,7 @@ blockquote footer {
   display: inline-flex;
   flex: 0 0 25px;
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-style: normal;
   height: 25px;
   justify-content: center;

@@ -48,7 +48,7 @@ const createVideoTile = (path, index) => {
   const tile = document.createElement('figure');
   const image = document.createElement('img');
   const trigger = document.createElement('button');
-  const playIcon = document.createElement('span');
+  const playIcon = document.createElement('i');
   const triggerLabel = document.createElement('span');
   const caption = document.createElement('figcaption');
   tile.className = 'media-tile video-tile media-vertical';
@@ -58,8 +58,7 @@ const createVideoTile = (path, index) => {
   trigger.className = 'video-trigger';
   trigger.type = 'button';
   trigger.setAttribute('aria-label', 'Zobacz rolkę z imprezy urodzinowej');
-  playIcon.className = 'play-icon';
-  playIcon.textContent = '▶';
+  playIcon.className = 'play-icon fa-solid fa-play';
   triggerLabel.textContent = 'Zobacz rolkę';
   trigger.append(playIcon, triggerLabel);
   caption.className = 'tile-label';
@@ -154,7 +153,10 @@ document.querySelectorAll('.video-tile').forEach((tile) => {
       openVideo(tile);
     }
   });
-  trigger.addEventListener('click', (event) => event.stopPropagation());
+  trigger.addEventListener('click', (event) => {
+    event.stopPropagation();
+    openVideo(tile);
+  });
 });
 
 lightboxClose.addEventListener('click', closeLightbox);
