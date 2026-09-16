@@ -65,19 +65,33 @@
       .to('.hero-note', { opacity: 1, y: 0, duration: 0.6 }, 1.2);
   }
 
-  /* 2. Delikatny parallax hero przy przewijaniu -------------------------- */
+  /* 2. Parallax hero przy przewijaniu ------------------------------------ */
+  // Zdjęcie i wideo to osobne warstwy, więc przesuwamy je transformacją (tanio, na GPU).
+  // Zapas na ruch daje skala: przy scale 1.15 warstwa ma 7,5% zapasu z każdej strony,
+  // więc yPercent nie może przekroczyć ±7. Chcesz mocniej? Podnoś scale i yPercent razem.
   if (ScrollTrigger) {
-    gsap.to('.hero-content', {
-      yPercent: -14,
-      ease: 'none',
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+    const heroScrollConfig = () => ({
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
     });
 
-    gsap.to('.hero-note', {
-      yPercent: 120,
-      ease: 'none',
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
-    });
+    gsap.fromTo(
+      '.hero-media',
+      { scale: 1, yPercent: -6 },
+      { scale: 1.15, yPercent: 30, ease: 'none', scrollTrigger: heroScrollConfig() }
+    );
+
+    gsap.fromTo(
+      '.hero-video',
+      { scale: 1, yPercent: -6 },
+      { scale: 1.15, yPercent: 30, ease: 'none', scrollTrigger: heroScrollConfig() }
+    );
+
+    gsap.to('.hero-content', { yPercent: -26, ease: 'none', scrollTrigger: heroScrollConfig() });
+
+    gsap.to('.hero-note', { yPercent: 160, ease: 'none', scrollTrigger: heroScrollConfig() });
   }
 
   // Odsłanianie przy scrollu wymaga ScrollTriggera – bez niego kończymy na intro.
