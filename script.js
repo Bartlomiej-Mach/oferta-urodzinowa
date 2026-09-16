@@ -1,3 +1,9 @@
+const video = document.querySelector('.hero-video');
+
+video.play().catch(() => {
+  // autoplay zostało zablokowane przez przeglądarkę
+});
+
 const galleryGrid = document.querySelector('.gallery-grid');
 const hero = document.querySelector('.hero');
 const heroImages = ['hero1.webp', 'hero2.webp', 'hero3.webp', 'hero4.webp'];
