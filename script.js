@@ -167,9 +167,14 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
 });
 
-document.querySelector('#contact-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const status = document.querySelector('#form-status');
-  status.textContent =
-    'Dziękuję. Formularz jest gotowy do podpięcia pod [DO PODMIANY] adres e-mail lub CRM.';
-});
+// Formularz kontaktowy jest w index.html zakomentowany, więc nie zakładamy, że istnieje.
+const contactForm = document.querySelector('#contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const status = document.querySelector('#form-status');
+    status.textContent =
+      'Dziękuję. Formularz jest gotowy do podpięcia pod [DO PODMIANY] adres e-mail lub CRM.';
+  });
+}

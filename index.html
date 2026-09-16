@@ -45,7 +45,11 @@
         </video>
         <div class="shell hero-content reveal">
           <p class="eyebrow">Fotografia & film na 18-stkę</p>
-          <h1 id="hero-title">Osiemnaście lat czekania na <br /><em>tę jedną noc.</em></h1>
+          <h1 id="hero-title">
+            <span class="hero-line">Osiemnaście</span>
+            <span class="hero-line">lat czekania na</span>
+            <span class="hero-line"><em>tę jedną noc.</em></span>
+          </h1>
           <p class="hero-lead">Fotografia i film, które oddają to, co poczujecie tylko raz.</p>
           <a class="button" href="#galeria"
             >Zobacz, jak to wygląda <i class="fa-solid fa-circle-arrow-down"></i
@@ -211,6 +215,17 @@
               <footer>Wojtek Latacz<br />Solenizant, 18. urodziny</footer>
             </blockquote>
           </div>
+          <div class="quotes-cta">
+            <p class="quotes-cta-text">Zobacz więcej opinii</p>
+            <div class="quotes-cta-buttons">
+              <a class="button button-ghost" href="[DO PODMIANY: Google]">
+                <i class="fa-brands fa-google" aria-hidden="true"></i>Google
+              </a>
+              <a class="button button-ghost" href="[DO PODMIANY: Facebook]">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -226,8 +241,8 @@
           <p class="package-standard">
             Każde zdjęcie, które dostajesz, przechodzi ten sam staranny retusz — usuwam
             niedoskonałości, zaczerwienienia i wygładzam skórę, poprawiam kolorystykę oczu, wybielam
-            zęby i usuwam ślady potu. To standard we wszystkich czterech pakietach — różni je zakres i
-            czas trwania relacji z Wami tego wieczoru.
+            zęby i usuwam ślady potu. To standard we wszystkich czterech pakietach — różni je zakres
+            i czas trwania relacji z Wami tego wieczoru.
           </p>
           <p class="delivery-note">
             <i class="fa-solid fa-info"></i>
@@ -354,10 +369,7 @@
             <article class="process-step">
               <span class="step-number">04</span>
               <h3>Odbiór galerii</h3>
-              <p>
-                W ciągu 5 tygodni dostajecie gotową galerię, do której można wracać bez
-                końca.
-              </p>
+              <p>W ciągu 5 tygodni dostajecie gotową galerię, do której można wracać bez końca.</p>
             </article>
           </div>
         </div>
@@ -413,6 +425,9 @@
     <footer class="shell footer">
       <span>Maszon Photo © 2024–2026</span><span>Fotografia z uważnością</span>
     </footer>
+    <script src="vendor/gsap.min.js" defer></script>
+    <script src="vendor/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="animations.js" defer></script>
   </body>
 </html>
